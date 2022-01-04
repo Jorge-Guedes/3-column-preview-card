@@ -1,0 +1,130 @@
+/* GLOBAL */
+:root {
+    --orange:  hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --ver-dark-cyan: hsl(179, 100%, 13%);
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(0, 0%, 95%);
+}
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: all .3s ease;
+}
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--gray);
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    padding: 2.66rem 0;
+}
+.card {
+    max-width: 20.66rem;
+    min-height: 33.33rem;
+    padding: 2.66rem;
+    color: var(--white);
+    position: relative;
+    margin: 0 auto;
+}
+.card:first-child {
+    border-top-left-radius: 0.66rem;
+    border-bottom-left-radius: 0.66rem;
+}
+.card:last-child {
+    border-top-right-radius: 0.66rem;
+    border-bottom-right-radius: 0.66rem;
+}
+.card.sedans {
+    background: var(--orange);
+}
+.card.suvs {
+    background: var(--dark-cyan);
+}
+.card.luxury {
+    background: var(--ver-dark-cyan);
+}
+.card h2 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 3.06rem;
+    text-transform: uppercase;
+    margin: 1.33rem 0;
+}
+.card p {
+    line-height: 1.66rem;
+    font-weight: 300;
+    max-width: 85%;
+}
+.card a.btn {
+    position: absolute;
+    bottom: 3.33rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 2rem;
+    text-decoration: none;
+}
+.card a.btn:hover {
+    background: transparent;
+    color: var(--white);
+}
+.card.sedans .btn {
+    color: var(--orange);
+}
+.card.suvs .btn {
+    color: var(--dark-cyan);
+}
+.card.luxury .btn {
+    color: var(--ver-dark-cyan);
+}
+
+/* FOOTER */
+footer {
+    font-size: .6rem;
+    text-align: center;
+    padding-bottom: 1.3rem;
+}
+footer a {
+    font-size: .8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 920px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        width: 90%;
+    }
+    .card:first-child {
+        border-top-right-radius: 0.66rem;
+        border-top-left-radius: 0.66rem;
+        border-bottom-left-radius: 0;
+    }
+    .card:last-child {
+        border-bottom-right-radius: 0.66rem;
+        border-bottom-left-radius: 0.66rem;
+        border-top-right-radius: 0;
+    }    
+}
+
+@media (max-width: 250px) {
+    *{
+        font-size: 10px;
+    }
+    .card a.btn {
+        padding: 0.5rem 1rem;
+    }    
+}
